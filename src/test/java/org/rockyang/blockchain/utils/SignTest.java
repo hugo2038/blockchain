@@ -1,9 +1,7 @@
 package org.rockyang.blockchain.utils;
 
-import org.rockyang.blockchain.crypto.BtcAddress;
-import org.rockyang.blockchain.crypto.ECKeyPair;
-import org.rockyang.blockchain.crypto.Keys;
-import org.rockyang.blockchain.crypto.Sign;
+import java.security.PublicKey;
+
 import org.junit.Test;
 import org.rockyang.blockchain.crypto.BtcAddress;
 import org.rockyang.blockchain.crypto.ECKeyPair;
@@ -11,8 +9,6 @@ import org.rockyang.blockchain.crypto.Keys;
 import org.rockyang.blockchain.crypto.Sign;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.security.PublicKey;
 
 /**
  * 签名测试
