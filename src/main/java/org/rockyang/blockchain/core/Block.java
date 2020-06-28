@@ -9,6 +9,8 @@ import java.io.Serializable;
  */
 public class Block implements Serializable {
 
+	private static final long serialVersionUID = 2349275228413931271L;
+
 	/**
 	 * 区块 Header
 	 */

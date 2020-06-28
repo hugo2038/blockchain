@@ -190,6 +190,7 @@ public class AppClientAioHandler extends BaseAioHandler implements ClientAioHand
 	 * 获取节点列表
 	 * @param body
 	 */
+	@SuppressWarnings("unchecked")
 	public void getNodeList(byte[] body) throws Exception {
 
 		ServerResponseVo responseVo = (ServerResponseVo) SerializeUtils.unSerialize(body);

@@ -11,6 +11,7 @@ import java.util.List;
  */
 public class BlockBody implements Serializable {
 
+	private static final long serialVersionUID = 3420392966972003641L;
 	/**
 	 * 区块所包含的交易记录
 	 */

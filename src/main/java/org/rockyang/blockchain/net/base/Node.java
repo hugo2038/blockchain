@@ -8,6 +8,8 @@ import java.io.Serializable;
  */
 public class Node extends org.tio.core.Node implements Serializable {
 
+	private static final long serialVersionUID = -1348045387585567122L;
+
 	public Node(String ip, int port) {
 		super(ip, port);
 	}

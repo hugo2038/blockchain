@@ -1,7 +1,5 @@
 package org.rockyang.blockchain.net.server;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.tio.core.ChannelContext;
 import org.tio.core.intf.Packet;
@@ -14,7 +12,7 @@ import org.tio.server.intf.ServerAioListener;
 @Component
 public class AppServerAioListener implements ServerAioListener {
 
-	private static Logger log = LoggerFactory.getLogger(AppServerAioListener.class);
+//	private static Logger log = LoggerFactory.getLogger(AppServerAioListener.class);
 
 	@Override
 	public void onAfterClose(ChannelContext channelContext, Throwable throwable, String remark, boolean isRemove) {

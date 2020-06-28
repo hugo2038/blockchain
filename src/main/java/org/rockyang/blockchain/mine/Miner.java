@@ -1,10 +1,10 @@
 package org.rockyang.blockchain.mine;
 
-import com.google.common.base.Optional;
-import org.rockyang.blockchain.core.Block;
+import java.math.BigDecimal;
+
 import org.rockyang.blockchain.core.Block;
 
-import java.math.BigDecimal;
+import com.google.common.base.Optional;
 
 /**
  * 挖矿接口

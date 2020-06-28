@@ -1,10 +1,7 @@
 package org.rockyang.blockchain.net.base;
 
-import com.google.common.base.Objects;
-import com.google.common.base.Optional;
-import org.rockyang.blockchain.core.Block;
-import org.rockyang.blockchain.db.DBAccess;
-import org.rockyang.blockchain.mine.pow.ProofOfWork;
+import java.nio.ByteBuffer;
+
 import org.rockyang.blockchain.core.Block;
 import org.rockyang.blockchain.db.DBAccess;
 import org.rockyang.blockchain.mine.pow.ProofOfWork;
@@ -13,7 +10,8 @@ import org.tio.core.GroupContext;
 import org.tio.core.exception.AioDecodeException;
 import org.tio.core.intf.Packet;
 
-import java.nio.ByteBuffer;
+import com.google.common.base.Objects;
+import com.google.common.base.Optional;
 
 /**
  * 抽象的  AioHandler, 消息编码，解码的通用实现

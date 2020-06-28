@@ -89,6 +89,7 @@ public class TioProps {
 		this.serverIp = serverIp;
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Node> getNodes() {
 		if (null == nodes) {
 			return null;
@@ -96,8 +97,8 @@ public class TioProps {
 		ArrayList<Node> nodeList = new ArrayList<>();
 		Iterator<Map.Entry<String, Object>> iterator= nodes.entrySet().iterator();
 		while(iterator.hasNext()) {
-			Map.Entry entry = iterator.next();
-			Map value = (Map) entry.getValue();
+			Map.Entry<String, Object> entry = iterator.next();
+			Map<String, Object> value = (Map<String, Object>) entry.getValue();
 			nodeList.add(new Node(value.get("ip").toString(), Integer.valueOf(value.get("port").toString())));
 		}
 		return nodeList;

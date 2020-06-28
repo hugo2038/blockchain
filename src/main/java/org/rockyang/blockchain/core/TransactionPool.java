@@ -45,7 +45,7 @@ public class TransactionPool {
 	 */
 	public void removeTransaction(String txHash)
 	{
-		for (Iterator i = transactions.iterator(); i.hasNext();) {
+		for (Iterator<Transaction> i = transactions.iterator(); i.hasNext();) {
 			Transaction tx = (Transaction) i.next();
 			if (Objects.equal(tx.getTxHash(), txHash)) {
 				i.remove();

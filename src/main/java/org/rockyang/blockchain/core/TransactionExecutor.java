@@ -70,7 +70,7 @@ public class TransactionExecutor {
 			dbAccess.put(transaction.getTxHash(), block.getHeader().getIndex());
 
 			// 将待打包交易池中包含此交易的记录删除，防止交易重复打包( fix bug for #IWSPJ)
-			for (Iterator i = transactionPool.getTransactions().iterator(); i.hasNext();) {
+			for (Iterator<Transaction> i = transactionPool.getTransactions().iterator(); i.hasNext();) {
 				Transaction tx = (Transaction) i.next();
 				if (tx.getTxHash().equals(transaction.getTxHash())) {
 					i.remove();

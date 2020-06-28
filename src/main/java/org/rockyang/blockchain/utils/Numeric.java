@@ -1,13 +1,11 @@
 package org.rockyang.blockchain.utils;
 
-import org.rockyang.blockchain.exceptions.MessageDecodingException;
-import org.rockyang.blockchain.exceptions.MessageEncodingException;
-import org.rockyang.blockchain.exceptions.MessageDecodingException;
-import org.rockyang.blockchain.exceptions.MessageEncodingException;
-
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Arrays;
+
+import org.rockyang.blockchain.exceptions.MessageDecodingException;
+import org.rockyang.blockchain.exceptions.MessageEncodingException;
 
 /**
  * <p>Message codec functions.</p>

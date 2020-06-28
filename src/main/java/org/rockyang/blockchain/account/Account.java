@@ -10,6 +10,8 @@ import java.math.BigDecimal;
  */
 public class Account implements Serializable {
 
+	private static final long serialVersionUID = -8288704976866594520L;
+
 	/**
 	 * 钱包地址
 	 */

@@ -8,7 +8,9 @@ import org.springframework.context.ApplicationEvent;
  */
 public class BlockConfirmNumEvent extends ApplicationEvent {
 
-    /**
+	private static final long serialVersionUID = 1932188360267940283L;
+
+	/**
      * @param blockIndex 区块高度
      */
     public BlockConfirmNumEvent(Integer blockIndex)

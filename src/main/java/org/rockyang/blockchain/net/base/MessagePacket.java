@@ -8,6 +8,8 @@ import org.tio.core.intf.Packet;
  */
 public class MessagePacket extends Packet {
 
+	private static final long serialVersionUID = -7338714699845796684L;
+
 	/**
 	 * 消息头的长度 1+4
 	 */

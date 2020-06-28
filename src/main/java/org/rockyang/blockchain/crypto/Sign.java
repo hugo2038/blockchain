@@ -1,8 +1,15 @@
 package org.rockyang.blockchain.crypto;
 
-import org.rockyang.blockchain.constants.CryptoConstants;
-import org.rockyang.blockchain.utils.Numeric;
-import com.sun.org.apache.xerces.internal.impl.dv.util.HexBin;
+import java.math.BigInteger;
+import java.security.KeyFactory;
+import java.security.PrivateKey;
+import java.security.PublicKey;
+import java.security.Security;
+import java.security.Signature;
+import java.security.interfaces.ECPublicKey;
+import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.spec.X509EncodedKeySpec;
+
 import org.bouncycastle.asn1.x9.X9ECParameters;
 import org.bouncycastle.crypto.ec.CustomNamedCurves;
 import org.bouncycastle.crypto.params.ECDomainParameters;
@@ -13,18 +20,17 @@ import org.bouncycastle.jce.spec.ECPrivateKeySpec;
 import org.bouncycastle.jce.spec.ECPublicKeySpec;
 import org.bouncycastle.math.ec.ECPoint;
 import org.bouncycastle.math.ec.FixedPointCombMultiplier;
+import org.rockyang.blockchain.constants.CryptoConstants;
+import org.rockyang.blockchain.utils.Numeric;
 
-import java.math.BigInteger;
-import java.security.*;
-import java.security.interfaces.ECPublicKey;
-import java.security.spec.PKCS8EncodedKeySpec;
-import java.security.spec.X509EncodedKeySpec;
+import com.sun.org.apache.xerces.internal.impl.dv.util.HexBin;
 
 /**
  * 签名工具类
  * @author yangjian
  * @since 18-4-10
  */
+@SuppressWarnings("restriction")
 public class Sign {
 
 	private static final X9ECParameters CURVE_PARAMS = CustomNamedCurves.getByName(CryptoConstants.EC_PARAM_SPEC);

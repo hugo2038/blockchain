@@ -8,7 +8,9 @@ import org.springframework.context.ApplicationEvent;
  */
 public class FetchNextBlockEvent extends ApplicationEvent {
 
-    /**
+	private static final long serialVersionUID = -7336631324337850970L;
+
+	/**
      * @param blockIndex 区块高度
      */
     public FetchNextBlockEvent(Integer blockIndex) {

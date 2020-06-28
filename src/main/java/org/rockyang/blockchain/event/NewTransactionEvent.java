@@ -9,7 +9,9 @@ import org.springframework.context.ApplicationEvent;
  */
 public class NewTransactionEvent extends ApplicationEvent {
 
-    public NewTransactionEvent(Transaction transaction) {
+	private static final long serialVersionUID = 9156778043272481785L;
+
+	public NewTransactionEvent(Transaction transaction) {
         super(transaction);
     }
 

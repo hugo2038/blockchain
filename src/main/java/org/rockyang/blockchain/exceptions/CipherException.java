@@ -5,7 +5,9 @@ package org.rockyang.blockchain.exceptions;
  */
 public class CipherException extends Exception {
 
-    public CipherException(String message) {
+	private static final long serialVersionUID = -3516693971341797390L;
+
+	public CipherException(String message) {
         super(message);
     }
 

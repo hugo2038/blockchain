@@ -12,6 +12,8 @@ import java.math.BigInteger;
  */
 public class BlockHeader implements Serializable {
 
+	private static final long serialVersionUID = 2723424152503727001L;
+
 	/**
 	 * 区块高度
 	 */

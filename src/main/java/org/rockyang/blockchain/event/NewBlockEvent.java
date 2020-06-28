@@ -9,7 +9,9 @@ import org.springframework.context.ApplicationEvent;
  */
 public class NewBlockEvent extends ApplicationEvent {
 
-    public NewBlockEvent(Block block) {
+	private static final long serialVersionUID = 3638870468836220761L;
+
+	public NewBlockEvent(Block block) {
         super(block);
     }
 }

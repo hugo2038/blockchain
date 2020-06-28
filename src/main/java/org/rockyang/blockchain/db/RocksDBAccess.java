@@ -21,6 +21,7 @@ import java.util.List;
 
 /**
  * RocksDB 操作封装
+ * 
  * @author yangjian
  * @since 18-4-10
  */
@@ -44,12 +45,13 @@ public class RocksDBAccess implements DBAccess {
 	/**
 	 * 初始化RocksDB
 	 */
+	@SuppressWarnings("resource")
 	@PostConstruct
 	public void initRocksDB() {
 
 		try {
-			//如果数据库路径不存在，则创建路径
-			File directory = new File(System.getProperty("user.dir")+"/"+ appConfig.getDataDir());
+			// 如果数据库路径不存在，则创建路径
+			File directory = new File(System.getProperty("user.dir") + "/" + appConfig.getDataDir());
 			if (!directory.exists()) {
 				directory.mkdirs();
 			}
@@ -109,8 +111,7 @@ public class RocksDBAccess implements DBAccess {
 	}
 
 	@Override
-	public List<Account> getAllAccounts()
-	{
+	public List<Account> getAllAccounts() {
 		List<Object> objects = seekByKey(WALLETS_BUCKET_PREFIX);
 		List<Account> accounts = new ArrayList<>();
 		for (Object o : objects) {
@@ -139,6 +140,7 @@ public class RocksDBAccess implements DBAccess {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Optional<List<Node>> getNodeList() {
 		Optional<Object> nodes = this.get(CLIENT_NODES_LIST_KEY);
@@ -153,15 +155,14 @@ public class RocksDBAccess implements DBAccess {
 	}
 
 	@Override
-	public synchronized boolean addNode(Node node)
-	{
+	public synchronized boolean addNode(Node node) {
 		Optional<List<Node>> nodeList = getNodeList();
 		if (nodeList.isPresent()) {
-			//已经存在的节点跳过
+			// 已经存在的节点跳过
 			if (nodeList.get().contains(node)) {
 				return false;
 			}
-			//跳过自身节点
+			// 跳过自身节点
 			Node self = new Node(tioProps.getServerIp(), tioProps.getServerPort());
 			if (self.equals(node)) {
 				return false;
@@ -210,6 +211,7 @@ public class RocksDBAccess implements DBAccess {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public <T> List<T> seekByKey(String keyPrefix) {
 
@@ -223,8 +225,7 @@ public class RocksDBAccess implements DBAccess {
 	}
 
 	@Override
-	public Transaction getTransactionByTxHash(String txHash)
-	{
+	public Transaction getTransactionByTxHash(String txHash) {
 		Optional<Object> objectOptional = get(txHash);
 		if (objectOptional.isPresent()) {
 			Integer blockIndex = (Integer) objectOptional.get();

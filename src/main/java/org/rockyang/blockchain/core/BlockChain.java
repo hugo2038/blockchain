@@ -59,7 +59,7 @@ public class BlockChain {
 
 		Optional<Block> lastBlock = getLastBlock();
 		Block block = miner.newBlock(lastBlock);
-		for (Iterator t = transactionPool.getTransactions().iterator(); t.hasNext();) {
+		for (Iterator<Transaction> t = transactionPool.getTransactions().iterator(); t.hasNext();) {
 			block.getBody().addTransaction((Transaction) t.next());
 			t.remove(); // 已打包的交易移出交易池
 		}
@@ -136,5 +136,13 @@ public class BlockChain {
 		appClient.addNode(ip, port);
 		Node node = new Node(ip, port);
 		dbAccess.addNode(node);
+	}
+
+	public boolean isSyncing() {
+		return syncing;
+	}
+
+	public void setSyncing(boolean syncing) {
+		this.syncing = syncing;
 	}
 }
