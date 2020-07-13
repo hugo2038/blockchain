@@ -10,7 +10,7 @@ import java.io.File;
 
 /**
  * 生成钱包测试
- * @author yangjian
+ * 
  * @since 18-4-9
  */
 public class WalletTest {

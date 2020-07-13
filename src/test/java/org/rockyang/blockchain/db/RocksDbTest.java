@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * @author yangjian
+ * 
  * @since 18-4-10
  */
 @RunWith(SpringJUnit4ClassRunner.class)

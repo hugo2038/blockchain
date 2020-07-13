@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * 区块测试
- * @author yangjian
+ * 
  * @since 18-4-13
  */
 @RunWith(SpringJUnit4ClassRunner.class)
